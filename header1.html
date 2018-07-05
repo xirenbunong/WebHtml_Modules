@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .header{
+            background-color: indigo;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1rem;
+            min-height: 2.75rem;
+            display: flex;
+            align-items: center;
+            padding: 0 1rem;
+        }
+        .list-item, .last-item{
+            color: #ebebeb;
+            cursor: pointer;
+        }
+        .list-item{
+            margin-right: 1rem;
+        }
+        .last-item{
+            /* 不需要浮动即可靠右 */
+            margin-left: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="list-item">Home</div>
+        <div class="list-item">About Us</div>
+        <div class="list-item">Products</div>
+        <div class="list-item">Policy</div>
+        <div class="last-item">Contact Us</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .flexWrapper{
+            background-color: indigo;
+            display: flex;
+            justify-content: space-between;
+            height: 200px;
+            width: 1000px;
+            color: #fff;    
+        }
+        .flexItems{
+            border: 1px solid #ededed;
+            background-color: #000;
+            display: flex;
+            flex-direction: column;
+            height: 100px;
+        }
+        .flexOne{
+            flex: 1 0 auto;
+
+        }
+        .flexTwo, flexThree{
+            flex: 1 0 auto;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="flexWrapper">
+        <div class="flexItems flexOne">盒子一</div>
+        <div class="flexItems flexTwo">这个盒子是旁边盒子的1.5倍</div>
+        <div class="flexItems flexThree">盒子二</div>
+    </div>
+</body>
+</html>

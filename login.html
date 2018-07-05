@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{background-color: #c8cccf;font-family: 苹方;}
+
+
+        .login{
+            width: 90%;
+            height: 244px;
+            display: flex;
+            flex-direction: column;
+            /* 横向 行（侧轴）的对齐方式 */
+            align-items: center;
+            border-radius: 10px;
+            box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+        }
+        .login .import{
+            height: 110px;
+            width: 280px;
+            margin-top: 60px;
+        }
+        .login .import input{
+            height: 33px;
+            width: 276px;
+            margin-bottom: 20px;
+            text-align: center;
+            border-radius: 5px;
+            border:1px solid #c8cccf;
+        }
+        .login-btn{
+            width: 100%;
+            height: 35px;
+            text-align: center;
+        }
+        .login-btn button{
+            /* 按钮渐变 */
+            background: linear-gradient(#c55c49,#9c1a0b);
+            height: 35px;
+            width: 278px;
+            border: none;
+            outline: none;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="login">
+        <div class="import">
+            <input type="text" placeholder ="  请输入用户名">
+            <input type="password" placeholder ="  请输入密码">
+        </div>
+        <div class="login-btn">
+            <button>登录</button>
+        </div>
+    </div>
+</body>
+</html>

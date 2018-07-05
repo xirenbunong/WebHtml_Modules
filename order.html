@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .flexWrapper{
+            background-color: indigo;
+            display: flex;
+            flex-direction: column;
+        }
+        .flexItems{
+            display: flex;
+            align-items: center;
+            min-height: 6.25rem;
+            padding: 1rem;
+        }
+        .flex1{
+            background-color: #105b63;
+        }
+        .flex2{
+            background-color: #fffad5;
+            /* order: -1; */
+        }
+        .flex3{
+            background-color: #ffd34e;
+        }
+        .flex4{
+            background-color: #db9e36;
+        }
+        .flex5{
+            background-color: #bd4932;
+        }
+
+        /* 媒体查询  宽度大于30rem时*/
+        @media(min-width: 30rem){
+            .flexWrapper{
+                flex-flow: row wrap;
+            }
+            .flex1{
+                width: 100%;
+            }
+            .flex2{
+                /* 填补剩余空间 */
+                flex: 1;
+                order: 3;
+            }
+            .flex3{
+                width: 150px;
+                order: 2;
+            }
+            .flex4{
+                width: 150px;
+                order: 4;
+            }
+            .flex5{
+                width: 100%;
+                order: 5;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="flexWrapper">
+        <div class="flexItems flex1">1</div>
+        <div class="flexItems flex2">2</div>
+        <div class="flexItems flex3">3</div>
+        <div class="flexItems flex4">4</div>
+        <div class="flexItems flex5">5</div>
+    </div>
+</body>
+</html>

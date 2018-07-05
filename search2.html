@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{background-color: #eee;}
+
+        .search input{
+            width: 550px;
+            height: 40px;
+            line-height: 40px;
+            padding-left: 10px;
+            font-size: 15px;
+            border: 2px solid #c60023;
+        }
+        .search .btn{
+            width: 80px;
+            height: 46px;;
+            font-size: 15px;
+            background-color: #c60023;
+            color: #fff;
+            border: none;
+            /* absolute脱离文档流，以上一个元素的末尾作为起始位置 */
+            position: absolute;
+            cursor: pointer;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="search">
+        <input type="text" placeholder="请输入内容">
+        <button class="btn">搜索</button>
+    </div>
+</body>
+</html>

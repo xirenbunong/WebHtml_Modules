@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        /* QQ浏览器必须有这个 */
+        /* html{
+            height: 100%;
+        } */
+        body{
+            /* 先规定内容区和底部区是列排布 */
+            display: flex;
+            flex-direction: column;
+            /* 设置body这个大盒子的高度 */
+            min-height: 100%;
+        }
+        .mainContent{
+            /* 在主轴：列上为1，扩大因子flex-grow */
+            flex: 1;
+        }
+        .footer{
+            background-color: violet;
+        }
+    </style>
+</head>
+<body>
+    <div class="mainContent">
+        <p>Here is a bunch of text up at the top.</p>
+        <p>Here is a bunch of text up at the top.</p>
+        <p>Here is a bunch of text up at the top.</p>
+        <p>Here is a bunch of text up at the top.</p>
+        <p>Here is a bunch of text up at the top.</p>
+        <p>Here is a bunch of text up at the top.</p>
+        <p>Here is a bunch of text up at the top.</p>
+        <p>Here is a bunch of text up at the top.</p>
+        <p>Here is a bunch of text up at the top.</p>
+        <p>Here is a bunch of text up at the top.</p>
+        <p>Here is a bunch of text up at the top.</p>
+        <p>Here is a bunch of text up at the top.</p>
+        <p>Here is a bunch of text up at the top.</p>
+        <p>Here is a bunch of text up at the top.</p>
+        <p>Here is a bunch of text up at the top.</p>
+        <p>Here is a bunch of text up at the top.</p>
+        <p>Here is a bunch of text up at the top.</p>
+    </div>
+    <div class="footer">
+        However, thanks to flexbox.
+    </div>
+</body>
+</html>
