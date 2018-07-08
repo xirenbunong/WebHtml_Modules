@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin:0;padding: 0;list-style: none;text-decoration: none;}
+        body{background-color: rgba(250, 235, 215, 0.521);}
+        .nav{
+            width: 500px;
+            height: 40px;
+            margin: 100px auto;
+        }
+        ul li{
+            float:left; 
+            display:block; 
+            width: 20%;
+            height: 40px; 
+            line-height: 40px;
+            text-align: center; 
+            position: relative;
+        }
+        ul li ul li{
+            /* float: none; */
+            width: 100%;
+        }
+        /* 二级菜单默认隐藏 */
+        ul li ul{
+            position: absolute;
+            width: 100%;
+            top:40px;
+            left: 0; 
+            display: none;
+            background-color: #ccc;
+        }
+        /* 鼠标经过一级菜单时显示二级菜单 */
+        ul li:hover ul{display: block;}
+        ul li ul li:hover{background: #eee;}
+        /* 二级菜单的小三角 */
+        ul li ul::before{
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: -6px;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-bottom: 8px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <ul>
+            <li style="background-color: #db6968">#db6968
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                </ul>
+            </li>
+            <li style="background-color: #22c3aa">#22c3aa
+                <ul>
+                    <li>3</li>
+                    <li>4</li>
+                </ul>
+            </li>
+            <li style="background-color: #305066">#305066
+                <ul>
+                    <li>5</li>
+                    <li>6</li>
+                </ul>
+            </li>
+            <li style="background-color: #0ea8e3">#0ea8e3
+                <ul>
+                    <li>7</li>
+                    <li>8</li>
+                </ul>
+            </li>
+            <li style="background-color: #cfe6ff">#cfe6ff
+                <ul>
+                    <li>9</li>
+                    <li>10</li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>
