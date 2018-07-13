@@ -15,10 +15,11 @@
             padding-left: 10px;
             font-size: 15px;
             border: 2px solid #c60023;
+            outline: none;
         }
         .search .btn{
             width: 80px;
-            height: 46px;;
+            height: 44.8px;;
             font-size: 15px;
             background-color: #c60023;
             color: #fff;
@@ -26,14 +27,93 @@
             /* absolute脱离文档流，以上一个元素的末尾作为起始位置 */
             position: absolute;
             cursor: pointer;
-
+            outline: none;
+        }
+        .search-list{
+            width: 560px;
+            background-color: #fff;
+            border: 2px solid #999;
+            border-top: none;
+            display: none;
+        }
+        .search-list ul{
+            list-style: none;
+            /* 去掉li的内外边距 */
+            margin: 0;
+            padding: 0;
+        }
+        .search-list ul li{
+            padding: 10px;
+            font-size: 14px;
+            line-height: 25px;
+            cursor: pointer;
+        }
+        .search-list ul li:hover{
+            background-color: #e5e5e5;
         }
     </style>
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    
 </head>
 <body>
     <div class="search">
-        <input type="text" placeholder="请输入内容">
+        <input type="text" placeholder="请输入内容" id="sear-input">
         <button class="btn">搜索</button>
     </div>
+    <div class="search-list" id="sear-list">
+        <ul id="sear-result">
+            <li>search1</li>
+            <li>search2</li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        // 事件绑定
+        $('#sear-input').bind('keyup', function(){
+            var jqInput = $(this);
+            var searchText = jqInput.val();
+            $.ajax({
+                type: "GET",
+                async: true,
+                url: 'http://api.bing.com/qsonhs.aspx?type=cb&&q=' + searchText,
+                dataType: 'jsonp',
+                jsonp: 'cb',
+                jsonpCallBack: 'callback',
+                success: function(data) {
+                    if (data.AS.FullResults != 0) {
+                        var d = data.AS.Results[0].Suggests,
+                            html = '';
+                        for (var i = 0; i < d.length; i++) {
+                            html += '<li>' + d[i].Txt + '</li>';
+                        }
+                        $('#sear-result').html(html);
+                        $('#sear-list').show();
+                    }
+                },
+                error: function(e) {
+                    console.log(e.responseText);
+                }
+            });
+            // 用户点击其他位置时search-list消失
+            $(document).click(function() {
+                $('#sear-list').hide();
+                return false;
+            });
+            // 事件代理
+            $(document).delegate('li', 'click', function() {
+                var keyword = $(this).text();
+                location.href = 'http://cn.bing.com/search?q=' + keyword;
+            });
+            //  给input框绑定回车事件,应该需要事件代理才能完成
+            $('#sear-input').bind('keypress',function(event){
+                if(event.keyCode == "13")    
+                {
+                    var se = $('#sear-input').text();
+                    alert('123');
+                	// location.href = 'http://cn.bing.com/search?q=' + se;
+                }
+            });
+
+        })
+    </script>
 </body>
 </html>
