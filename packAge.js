@@ -2,7 +2,7 @@
  * @Author: 袭人 
  * @Date: 2018-07-13 16:59:30 
  * @Last Modified by: who
- * @Last Modified time: 2018-07-13 17:03:29
+ * @Last Modified time: 2018-07-13 18:30:44
  */
 
 <script>
@@ -23,6 +23,7 @@
         }
     };
 
+
     //封装js的ajax
     //使用时ajaxGet('url地址', 回调函数(接收服务器返回的参数))
     var ajaxGet = function(url, callback) {
@@ -34,7 +35,7 @@
         } else if (window.ActiveXObject) {
             _xhr = new ActiveXObject('Msxml2.XMLHTTP');
         }
-        //正确返回是4和200
+        //正确返回是4和200,监听onreadystatechange的值
         _xhr.onreadystatechange = function() {
             if (_xhr.readyState == 4 && _xhr.status == 200) {
                 callback(JSON.parse(_xhr.reponseText));
@@ -43,6 +44,7 @@
         _xhr.open('get', url, true);
         _xhr.send(null);
     };
+    
 
     //封装js的事件代理
     var delegateEvent = function(target, event, fn) {

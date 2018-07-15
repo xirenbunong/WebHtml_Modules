@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            body{
+                /* background-image: url(图片/10001.jpg); */
+                background: #f0f8ff;
+                background-size: 100% 100%;
+            }
+            .box{
+                width: 800px;
+                height: 480px;
+                margin: 50px auto;
+                border-radius: 10px;
+                box-shadow: 4px 4px 5px #333333;
+            }
+            .bg{
+				
+                width: 400px;
+                height: 480px;
+                background: url("图片/10002.jpg");
+                float: left;
+                /* 两盒子在一行显示 */
+                border-radius: 10px 0px 0px 10px;
+            }
+            .register{
+                width: 400px;
+                height: 480px;
+                background: #ffffff;
+                float: left;
+                /* 两盒子在一行显示  */
+                border-radius: 0px 10px 10px 0px;
+            }
+            .photo{
+                height: 100px;
+                text-align: center;
+				margin-top: 50px;
+            } 
+            .photo img{
+                height: 85px;
+                margin-top: 5px;
+            }
+            
+            .name{
+                padding-top: 10px;
+                padding-left: 50px;
+                font-size: 15px;
+            }
+            .name p{
+                margin-top: 10px;
+            }
+            .name input{
+                width: 300px;
+                border: none;
+                margin-top: 8px;
+                border-bottom: 2px solid #00ffff;
+                color: #000;
+            }
+            .name input:focus{
+                outline: none;
+                border-bottom: 2px solid #00ffff;
+
+            }
+            .pass input{
+                width: 300px;
+                border: none;
+                margin-top: 8px;
+                border-bottom: 2px solid #00ffff;
+                color: #000;
+            }
+            .pass input:focus{
+                outline: none;
+                border-bottom: 2px solid #00ffff;
+            }
+            .button input{
+                width: 300px;
+                border: none;
+                margin-top: 8px;
+                border-bottom: 2px solid #00ffff;
+                color: #000;
+            }
+            .button input:focus{
+                outline: none;
+                border-bottom: 2px solid #00ffff;
+            }
+            .pass{
+                margin-top: 20px;
+                padding-top: 10px;
+                padding-left: 50px;
+                font-size: 15px;
+            }
+            
+            .button{
+                margin-top: 20px;
+                height: 40px;
+                text-align: center;
+
+            }
+            .button input{
+                height: 40px;
+                border-bottom: 0px;
+                border-radius: 10px;
+                /* 按钮四周圆角弯曲半径 */
+                color: #000;
+                background: #00ffff;
+                margin-bottom: 5px;
+                box-shadow: 2px 2px 2 px #333333;
+				font-size: 16px;
+
+            }
+            .button p{
+                color: #cecece;
+            }
+            
+            .button input:hover{
+                color: #fff;
+                background: #00ced1;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box">
+            <div class="bg">
+                <img src="图片/10003.jpg" alt="">
+            </div>
+            <div class="register">
+                <div class="photo">
+                    <img src="图片/未来教育完结版.png" alt="" style="width: 80px; height: 85px;">
+                </div>
+                
+                <form name="" action="数据库课设.html">
+                <div class="name">
+                    <p>用户名</p>
+                    <input type="text" placeholder ="  请输入用户名" id= "txt1">
+                </div>
+                <div class="pass">
+                    <p>密码</p>
+                    <input type="password" placeholder ="   **********" id="txt">
+                </div>
+                
+                <div class="button">
+                    <input type="button" value="登   陆" onclick="login()">
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
