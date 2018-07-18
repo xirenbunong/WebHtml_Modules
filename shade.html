@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #bg{ 
+        	display: none; 
+        	position: absolute; 
+        	top: 0%; 
+        	left: 0%; 
+        	width: 100%; 
+        	height: 100%; 
+        	background-color: black; 
+        	z-index:1001; 
+        	-moz-opacity: 0.3; 
+        	opacity:.30; 
+        	filter: alpha(opacity=30);
+        }
+ 
+        #show{ 
+        	display: none; 
+        	position: absolute; 
+        	top: 25%; 
+        	left: 32%; 
+        	width: 33%; 
+        	height: auto; 
+        	padding: 8px;
+        	border: 8px solid #E8E9F7; 
+        	background-color: white; 
+        	z-index:1002; 
+        	overflow: auto;
+        }
+    </style>
+</head>
+<body>
+        <input type="button" class="button1" value="排序" style="margin-left:30px;" onclick="showDiv()"/>
+        <input type="button" class="button2" value="字段" onclick="showDiv()"/>
+
+    <div class="container_div"><!-- 遮罩 -->
+        <div id="bg"></div>
+        <div id="show">
+            排序<hr />
+            <form action="#" method="post">
+                <table>
+                    <tr>
+                        <td>状态：</td>
+                        <td class="zhezhao_value"><select>
+                                <option>发文</option>
+                                <option>收文</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td>公文类型：</td>
+                        <td class="zhezhao_value"><select>
+                                <option>通知</option>
+                                <option>公告</option>
+                            </select></td>
+                    </tr>
+                </table>
+                <div class="btn_div">
+                    <input type="submit" class="submit" value="确定" />
+                    <input type="button" class="concel" value="取消" onclick="hideDiv()" />
+                    <input type="reset" class="reset" value="清空"  />
+                </div>
+             </form>
+        </div>
+    </div>
+
+
+    <script>    
+        function showDiv() { 
+        	document.getElementById("bg").style.display ="block";
+        	document.getElementById("show").style.display ="block";
+        }
+        
+        function hideDiv(){
+        	document.getElementById("bg").style.display ="none";
+        	document.getElementById("show").style.display ="none";	
+        }
+    </script>
+</body>
+</html>
