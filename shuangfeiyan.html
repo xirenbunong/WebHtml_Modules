@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #wrapper{
+            width: 300px;
+            height: 1000px;
+            margin: 50px auto;
+            line-height: 200px;
+            font-size: 20px;
+            color: white;
+            text-align: center;
+            overflow: hidden
+        }
+        .header,
+        .footer{
+            background: #9fe0f6;
+            width: 100%;
+            text-align: center;
+            line-height: 50px;
+        }
+        .header{
+            background: #0092c7;
+        }
+        .container{
+            padding: 0 50px;
+            overflow: hidden;
+        }
+        .left,
+        .center,
+        .right{
+            position: relative;
+            text-align: center;
+            line-height: 50px;
+            padding-bottom: 1000px;
+            margin-bottom: -1000px;
+        }
+        .left{
+            float: left;
+            width: 50px;
+            margin-left: -50px;
+            background: #f3e59a;
+        }
+        .center{
+            float: left;
+            width:100%;
+            height: 100px;
+            background: #f3b59b;
+        }
+        .right{
+            float: left;
+            margin-left: -100%;
+            right: -100%;
+            width:50px;
+            background: #f29c9c;
+        }
+        .footer{
+            clear:both;
+        }
+    </style>
+    <body>
+        <div id = ‘wrapper‘>
+            <div class = "header">header</div>
+            <div class = "container">
+                <div class = "left">left</div>
+                <div class = "center">center</div>
+                <div class = "right">right</div>
+            </div>
+            <div class = "footer">footer</div>
+        </div>
+    </body>
+</html>
