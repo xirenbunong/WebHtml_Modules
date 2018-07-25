@@ -6,80 +6,227 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        #bg{ 
-        	display: none; 
+        *{margin: 0; padding: 0;}
+        a{text-decoration:none; color: #fff;margin: 0 8px;}
+        /* 头部导航开始 */
+        .header{
+            background-color: #42a881;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1rem;
+            min-height: 2.75rem;
+            display: flex;
+            align-items: center;
+            padding: 0 1rem;
+        }
+        .list-item, .last-item{
+            color: #ebebeb;
+            cursor: pointer;
+        }
+        .list-item{
+            margin-right: 1rem;
+        }
+        .last-item{
+            /* 不需要浮动即可靠右 */
+            margin-left: auto;
+            
+        }
+
+
+        /* 遮罩层开始 */
+        .shade-all{
+            display: none; 
         	position: absolute; 
         	top: 0%; 
         	left: 0%; 
         	width: 100%; 
         	height: 100%; 
         	background-color: black; 
-        	z-index:1001; 
+        	z-index:1001;
         	-moz-opacity: 0.3; 
         	opacity:.30; 
         	filter: alpha(opacity=30);
         }
- 
-        #show{ 
-        	display: none; 
-        	position: absolute; 
-        	top: 25%; 
-        	left: 32%; 
-        	width: 33%; 
-        	height: auto; 
-        	padding: 8px;
-        	border: 8px solid #E8E9F7; 
-        	background-color: white; 
-        	z-index:1002; 
+        .shade-login{
+            display: none; 
+            position: absolute; 
+        	top: 15%; 
+        	left: 35%; 
+            width: 25%; 
+        	height: auto;
+            z-index:1002; 
         	overflow: auto;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        .shade-registe{
+            display: none; 
+            position: absolute; 
+        	top: 15%; 
+        	left: 35%; 
+            width: 25%; 
+        	height: auto;
+            z-index:1002; 
+        	overflow: auto;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+
+        /* 登录页面开始 */
+        .login{
+            width: 100%;
+            height: 270px;
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            /* 横向 行（侧轴）的对齐方式 */
+            align-items: center;
+            
+        }
+        .login-del{
+            font-size: 18px;
+            margin-left: 85%;
+            font-size: 22px;
+            cursor: default;
+        }
+        .login .import{
+            height: 110px;
+            width: 280px;
+            margin-top: 36px;
+        }
+        .login .import input{
+            height: 33px;
+            width: 276px;
+            margin-bottom: 20px;
+            text-align: center;
+            border-radius: 5px;
+            border:1px solid #c8cccf;
+        }
+        .login-btn{
+            width: 100%;
+            height: 35px;
+            text-align: center;
+        }
+        .login-btn button{
+            /* 按钮渐变 */
+            background: linear-gradient(#82be95,#45b97c);
+            height: 35px;
+            width: 278px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .login-footer{
+            width:278px;
+            margin-top: 5px;
+            font-size: 14px;
+            font-size: 12px;
+        }
+        .login-footer .logFot-l{
+            float: left;
+        }
+        .login-footer .logFot-r{
+            float: right;
+        }
+        .login-footer a{
+            color: #45b97c;
+            margin-left: 3px;
+            cursor: pointer;
+        }
+
+        .reg-ed{
+            text-align: center;
+        }
+        .reg-ed a{
+            color: #64bb88;
+            cursor: pointer;
+            margin: 0;
         }
     </style>
+    <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".cli-login").click(function(){
+                showLoginDiv();
+            });
+            $(".cli-registe").click(function(){
+                showRegisteDiv();
+            });
+            $(".login-del").click(function(){
+                hideDiv();
+            });
+            $(".p-reg").click(function(){
+                showRegisteDiv();
+            });
+            $(".reg-ed").click(function(){
+                hideDiv();
+                showLoginDiv();
+            });
+            function showLoginDiv() { 
+        	    $(".shade-all").css("display","block");
+        	    $(".shade-login").css("display","block");
+            }
+            function showRegisteDiv() { 
+        	    $(".shade-all").css("display","block");
+        	    $(".shade-registe").css("display","block");
+            }
+            function hideDiv() { 
+        	    $(".shade-all").css("display","none");
+        	    $(".shade-login").css("display","none");
+                $(".shade-registe").css("display","none");
+            }
+        });
+    </script>
 </head>
 <body>
-        <input type="button" class="button1" value="排序" style="margin-left:30px;" onclick="showDiv()"/>
-        <input type="button" class="button2" value="字段" onclick="showDiv()"/>
+    <!-- 导航头部开始 -->
+    <div class="header">
+        <div class="list-item">Home</div>
+        <div class="list-item">About Us</div>
+        <div class="list-item">Products</div>
+        <div class="list-item">Policy</div>
+        <div class="last-item"><a class="cli-login">Login</a>|<a class="cli-registe">Registe</a></div>
+    </div>
 
-    <div class="container_div"><!-- 遮罩 -->
-        <div id="bg"></div>
-        <div id="show">
-            排序<hr />
-            <form action="#" method="post">
-                <table>
-                    <tr>
-                        <td>状态：</td>
-                        <td class="zhezhao_value"><select>
-                                <option>发文</option>
-                                <option>收文</option>
-                            </select></td>
-                    </tr>
-                    <tr>
-                        <td>公文类型：</td>
-                        <td class="zhezhao_value"><select>
-                                <option>通知</option>
-                                <option>公告</option>
-                            </select></td>
-                    </tr>
-                </table>
-                <div class="btn_div">
-                    <input type="submit" class="submit" value="确定" />
-                    <input type="button" class="concel" value="取消" onclick="hideDiv()" />
-                    <input type="reset" class="reset" value="清空"  />
+    <!-- 遮罩层开始 -->
+    <div class="shade">
+        <div class="shade-all"></div>
+        <div class="shade-login">
+            <div class="login">
+                <div class="login-del">×</div>
+                <div class="import">
+                    <input type="text" placeholder ="  请输入用户名">
+                    <input type="password" placeholder ="  请输入密码">
                 </div>
-             </form>
+                <div class="login-btn">
+                    <button>登录</button>
+                </div>
+                <div class="login-footer">
+                    <div class="logFot-l">没有账号？ <a class="p-reg">注册</a></div>
+                    <div class="logFot-r"><a>忘记密码</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="shade-registe">
+            <div class="login">
+                <div class="login-del">×</div>
+                <div class="import">
+                    <input type="text" placeholder ="  请输入用户名">
+                    <input type="password" placeholder ="  请输入密码">
+                    
+                </div>
+                <div class="login-btn">
+                    <button>注册</button>
+                </div>
+                <div class="login-footer">    
+                    <div class="reg-ed"><a>已有账号登录</a></div>
+                </div>
+            </div>
         </div>
     </div>
 
-
-    <script>    
-        function showDiv() { 
-        	document.getElementById("bg").style.display ="block";
-        	document.getElementById("show").style.display ="block";
-        }
-        
-        function hideDiv(){
-        	document.getElementById("bg").style.display ="none";
-        	document.getElementById("show").style.display ="none";	
-        }
-    </script>
 </body>
 </html>
