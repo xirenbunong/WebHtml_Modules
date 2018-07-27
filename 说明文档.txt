@@ -1,10 +1,41 @@
-已完成文件：
-login.html
-search1.html
-search2.html
+未完成文件：
+div1.html
+nth.html
+slide-door.html
+slide-door2.html
 
 
-packAge.js文件是封装一些原生js用到的函数
+文档说明：
+1.carousel(lunbo).html：
+基于unslider的轮播图；
 
+2.footer.html:
+基于flex的页脚；
 
-滑动--移动端(小框)
+3.header1.html:
+基于flex的导航条
+
+4.header-list.html：
+鼠标滑过会有下拉列表的导航条示例
+
+5.loading.html:
+基于css动画的loading样式，比较大众
+
+6.login.html:
+登录框，比较适合移动端的设计
+
+7.login-f.html:
+登陆页面，宫崎骏风格，左边的空白用于添加图片
+
+8.composition.html：
+文字分列，自适应效果
+
+9.order.html:
+自适应的页面布局
+
+10.search1.html:
+简洁的搜索框
+
+11.search.html:
+比较常见的搜索框
+
