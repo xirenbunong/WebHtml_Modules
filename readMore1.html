@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css"> 
+        div.panel,p.flip
+        {
+            margin:0px;
+            padding:5px;
+            text-align:center;
+            background:#e5eecc;
+            border:solid 1px #c3c3c3;
+        }
+        div.panel
+        {
+            height:auto;
+            display:none;
+        }
+        .flip{
+            cursor: pointer;
+        }
+        </style>
+    <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+        $(".flip").click(function(){
+            $(".panel").slideToggle(3);
+            if($(".flip").text() == "点击展开"){
+                $(".flip").text("点击收起");
+            }else{
+                $(".flip").text("点击展开");
+            }
+
+            
+          });
+        });
+    </script>
+</head>
+<body>
+        <div class="panel">
+                <p>临风守望三千年<br>
+
+                        我是沉默的苍天<br>
+                        
+                        看你流连<br>
+                        
+                        穿梭在无路的世间<br>
+                        
+                        你可以忘了你的初心<br>
+                        
+                        我不能不信守我的爱情<br>
+                        
+                        我驭风而来<br>
+                        
+                        给你一声应允<br>
+                        
+                        广大如我<br>
+                        
+                        肯将全部的年华<br>
+                        
+                        化作无边的等待<br>
+                        
+                        作磐作石 似誓似盟</p>
+        </div>
+        <p class="flip">点击展开</p>
+</body>
+</html>
