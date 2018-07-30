@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0; list-style: none;}
+        body{
+            background-color: #eee;
+        }
+        aside{
+            margin: 100px 150px;
+        }
+        .menu{
+            width: 200px;
+            height: 370px;
+            background-color: #fff;
+            border-left: 1px solid #76becc;
+            border-bottom: 1px solid #76becc;
+        }
+        .menu ul li{
+            height: 37px;
+            line-height: 37px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .menu ul li:hover{
+            color: #76becc;
+            background-color: #eee;
+        }
+        .detial{
+            position: absolute;
+            left: 351px;
+            top: 100px;
+            height: 370px;
+            background-color: #fff;
+        }
+        .detial div{
+            width: 420px;
+            display: none;
+        }
+    </style>
+    <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var $div_li = $(".menu ul li"); 
+            $div_li.mouseover(function(){
+                var index = $div_li.index(this);// 获取当前点击的<li>元素 在全部li元素中的索引
+                $(".detial > div")
+                    .eq(index).show()  //eq() 方法返回带有被选元素的指定索引号的元素
+                    .siblings().hide();//siblings()函数是遍历同辈元素
+            });
+            $(".menu").mouseout(function(){
+                $(".detial > div").css("display","none");
+            });
+        });
+    </script>
+</head>
+<body>
+    <aside>
+        <div class="menu">
+            <ul>
+                <li>女装 / 男装 / 内衣</li>
+                <li>鞋靴 / 箱包 / 配件</li>
+                <li>家电 / 数码 / 手机</li>
+                <li>珠宝 / 眼镜 / 手表</li>
+                <li>运动 / 户外 / 乐器</li>
+                <li>美食 / 生鲜 / 零食</li>
+                <li>鲜花 / 宠物 / 农资</li>
+                <li>房产 / 装修 / 建材</li>
+                <li>家具 / 家饰 / 家纺</li>
+                <li>汽车 / 二手车 / 用品</li>
+            </ul>
+        </div>
+
+        <div class="detial">
+            <div>
+                <p>夏上新 连衣裙 T恤 衬衫 雪纺衫 裤子 半身裙 牛仔裤</p>
+                <p>蕾丝衫 背心吊带 雪纺连衣裙 阔腿裤 时尚套装 防晒衫 短裤</p>
+                <p>大码女装 薄西装 ifashion女装 棉麻连衣裙 旗袍 真丝连衣裙</p>
+                <p>T恤 衬衫 POLO衫 外套 休闲裤 牛仔裤 卫衣 夹克 风衣</p>
+                <p>开衫 马甲 呢大衣 中老年 情侣装 大码 民族风 专柜大牌</p>
+            </div>
+            <div>
+                <p>2</p>
+                <p>2</p>
+                <p>2</p>
+                <p>2</p>
+                <p>2</p>
+            </div>
+            <div>
+                <p>3</p>
+                <p>3</p>
+                <p>3</p>
+                <p>3</p>
+                <p>3</p>
+            </div>
+            <div>
+                <p>4</p>
+                <p>4</p>
+                <p>4</p>
+                <p>4</p>
+                <p>4</p>
+            </div>
+            <div>
+                <p>5</p>
+                <p>5</p>
+                <p>5</p>
+                <p>5</p>
+                <p>5</p>
+            </div>
+            <div>
+                <p>6</p>
+                <p>6</p>
+                <p>6</p>
+                <p>6</p>
+                <p>6</p>
+            </div>
+            <div>
+                <p>7</p>
+                <p>7</p>
+                <p>7</p>
+                <p>7</p>
+                <p>7</p>
+            </div>
+            <div>
+                <p>8</p>
+                <p>8</p>
+                <p>8</p>
+                <p>8</p>
+                <p>8</p>
+            </div>
+            <div>
+                <p>9</p>
+                <p>9</p>
+                <p>9</p>
+                <p>9</p>
+                <p>9</p>
+            </div>
+            <div>
+                <p>10</p>
+                <p>10</p>
+                <p>10</p>
+                <p>10</p>
+                <p>10</p>
+            </div>
+        </div>
+    </aside>
+</body>
+</html>
