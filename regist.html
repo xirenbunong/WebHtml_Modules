@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+       
+        .regist{
+            width: 600px;
+            height: 450px;
+            border: 1px solid #ccc;
+            margin: 50px auto;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        .reg-title{
+            text-align: center;
+            margin: 20px;
+            border-bottom: 1px solid #ccc;
+        }
+        form{
+            width: 300px;
+            height: 250px;
+            
+            margin-left: 200px;
+        }
+        form .usernotsame{
+            color: #e4393c;
+            font-size: 12px;
+            display: none;
+        }
+        form .notsame{
+            color: #fff;
+            font-size: 12px;
+            display: inline-block;
+        }
+        form input, select{
+            width: 195px;
+            height: 19px;
+            margin-bottom: 10px;
+        }
+        .reg-sub{
+            height: 30px;
+            width: 199px;
+            background-color: #e4393c;
+            color: #fff;
+            border:0;
+        }
+    </style>
+    <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+         $(document).ready(function(){
+            $('#next').click(function(){
+                var ps1 = $('#ps1').val();
+                var ps2 = $('#ps2').val();
+                console.log('111');
+                if(ps1 != ps2){
+                    console.log('1123');
+                    $('.notsame').css('color', '#e4393c');
+                }
+            });
+         });
+    </script>
+</head>
+<body>
+    <div class="regist">
+        <div class="reg-title">
+            <h2>重置密码</h2>
+        </div>
+        <form action="RegistServlet" method="post">
+            用户名：<br><input type="text" name="LoginName"><span class="usernotsame">*用户名已被注册</span><br>
+            密码：<br><input type="password" name="LoginPsw" id="ps1"><br>
+            确认密码：<br><input type="password" name="LoginPsw" id="ps2"><span class="notsame">&nbsp*密码输入不一致</span><br>
+            密保问题：<br><select>
+                <option value="your best friend?">your best friend?</option>
+            </select><br>
+            密保答案：<br><input type="text" name="answer" id="next"><br>
+            
+            
+            <br><input type="submit" value="注册" class="reg-sub">
+        </form>
+    </div>
+</body>
+</html>
