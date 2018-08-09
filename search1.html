@@ -33,11 +33,20 @@
             cursor: pointer;
         }
     </style>
+    <script>
+        window.onload = function(){
+            var sele = document.getElementById("select");
+            // sele.focus(); //自动获得焦点
+            sele.onmouseover = function(){
+                this.select(); //鼠标经过就获得焦点
+            }
+        }
+    </script>
 </head>
 <body>
     <li>
         <div class="search">
-            <input type="text" placeholder="请输入">
+            <input type="text" placeholder="请输入" id="select">
             <img src="./img/icon_search_01.png" alt="search">
         </div>
     </li>

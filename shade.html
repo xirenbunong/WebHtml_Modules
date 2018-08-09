@@ -149,6 +149,7 @@
     <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
     <script>
         $(document).ready(function(){
+            $(".text").focus();//自动获得焦点
             $(".cli-login").click(function(){
                 showLoginDiv();
             });
@@ -198,7 +199,7 @@
             <div class="login">
                 <div class="login-del">×</div>
                 <div class="import">
-                    <input type="text" placeholder ="  请输入用户名">
+                    <input class="text" type="text" placeholder ="  请输入用户名">
                     <input type="password" placeholder ="  请输入密码">
                 </div>
                 <div class="login-btn">
@@ -214,7 +215,7 @@
             <div class="login">
                 <div class="login-del">×</div>
                 <div class="import">
-                    <input type="text" placeholder ="  请输入用户名">
+                    <input type="text" class="text" placeholder ="  请输入用户名">
                     <input type="password" placeholder ="  请输入密码">
                     
                 </div>
