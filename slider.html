@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        li{list-style: none;}
+        .box{
+            width: 365px;
+            height: 25px;
+            margin: 100px auto;
+        }
+        .box ul li{
+            float: left;
+            width: 72px;
+            height: 25px;
+            text-align: center;
+            border: 1px solid #ccc;
+            position: relative;
+            margin-left: -1px;
+            margin-top: -1px;
+        }
+        .box ul li.b{
+            border: 1px solid #000;
+            border-bottom: 0px;
+            z-index: 1;
+        }
+        .liContent{
+            width: 364px;
+            height: 265px;
+            border: 1px solid #ccc;
+            border-top: 0px;
+            margin-left: -1px;
+        }
+        .liContent div{
+            display: none;
+            width: 364px;
+            height: 265px;
+            /* 文字超出，自动换行 */
+            word-wrap: break-word
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var lis = document.getElementById("box").getElementsByTagName("li");
+            var dis = document.getElementById("liContent").getElementsByTagName("div");
+            for(var i = 0; i < lis.length; i++){
+                lis[i].index = i;
+                lis[i].onmouseover = function(){
+                    for(var j = 0; j < lis.length; j++){
+                        lis[j].className = "";
+                        dis[j].style.display = "none";
+                    }
+                    this.className = "b";
+                    //关于为什么要使用this.index而不是直接i,使用console.log(i);可知
+                    dis[this.index].style.display = "inline-block";
+                }
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    <div class="box" id="box">
+        <ul>
+            <li class="b">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <div class="liContent" id="liContent">
+            <div style="display: block;">1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4wwwwwwwwwwwwwwwwwwwwwwwwwwwwjjjjjjjjj</div>
+            <div>5222222222222222222222222222222222222555555555</div>
+        </div>
+    </div>
+</body>
+</html>
